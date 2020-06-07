@@ -61,10 +61,11 @@ int main(int argc, char *argv[]) {
       
       else
       { 
-        char *argsChar[2];
-        itoa(fd[READ_END],argsChar[0],10);
-        itoa(fd[WRITE_END],argsChar[1],10);
-        char *args[]={argv[2],argsChar[0],argsChar[1],NULL}; 
+        /*char *argsChar[2];
+        sprintf(argsChar[0], "%d", fd[0]);
+        sprintf(argsChar[1], "%d", fd[1]);*/
+
+        char *args[]={argv[2],NULL}; 
         execv(args[0],args);
         printf("Child proses sonlandı...\n");
       }
