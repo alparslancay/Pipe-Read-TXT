@@ -3,83 +3,91 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 
-#define READ_END 0
-#define WRITE_END 1
+#define READ_END 0 //Defined READ_END Tunel(fd[]) index
+#define WRITE_END 1// Defined WRITE_END Tunel(fd[]) index
+
+void pipeCreate();
+void printErrorMessage(char *errorMessage);
 
 int main(int argc, char *argv[]) {
+
   FILE *fp;
   char dataFromTXT[9999];
-  fp = fopen("inputFile.txt","r");
+  fp = fopen("inputFile.txt","r"); // File opening in read-only mode
   
-  fread(dataFromTXT, sizeof(char),sizeof(dataFromTXT),fp);
-  
-  switch(argc){
-
-  case 1:{
-    printf("%s",dataFromTXT);
-    break;
+  if(fp == NULL){//Control for file exits.
+    printErrorMessage("File can not open");
+    exit(1);
   }
 
-  case 3:{
+  fread(dataFromTXT, sizeof(char),sizeof(dataFromTXT),fp);//File reading...
+  
+  switch(argc)//argument count
+  {
 
-    if(fp == NULL){
-      printf("File can not open");
-      exit(1);
+    case 1:
+    { //If argument count 1
+      printf("%s",dataFromTXT); //All texts printing.
+      break;
     }
 
-    else{
+    case 3:
+    { //If argument count 3
 
-      int fd[2];
-      pid_t pid;
-      /* create the pipe */
-      if(pipe(fd)==-1)
-      {
-        fprintf(stderr,"Pipe failed");
-        return 1;
-      }
-      /* fork a child process */
-      pid = fork();
+      int fd[2]; //Tunel defined.
+      pid_t pid; //Process defining.
+
+      pipeCreate(fd);//Pipe creating.
+
+      pid = fork();//Fork process (creating pid>0 parent and pid=0 child process)
       if(pid < 0)
-      {/* error occurred */
-        fprintf(stderr,"Fork Failed");
-      return 1;
-      }
+        printErrorMessage("Fork Failed");
 
-      if(pid > 0)
-      { /* parent process */
+      if(pid > 0)//Parent process
+      {
         /* close the unused end of the pipe */
         close(fd[READ_END]);
         /* write to the pipe */
+        printf("Parent process writing to pipe...\n");
         write(fd[WRITE_END],dataFromTXT,strlen(dataFromTXT)+1);
-        printf("Parent proses pipe'a yazdı...\n");
+        printf("Parent process wrote to pipe.\n");
         /* close the write end of the pipe */
         close(fd[WRITE_END]);
         wait(NULL);
-        printf("Parent proses sonlandı...\n");
+        printf("Parent process end.\n");
       }
-      
+    
       else
       { 
-        /*char *argsChar[2];
-        sprintf(argsChar[0], "%d", fd[0]);
-        sprintf(argsChar[1], "%d", fd[1]);*/
-
         char *args[]={argv[2],NULL}; 
+        printf("Executing myMore.c ...\n");
         execv(args[0],args);
-        printf("Child proses sonlandı...\n");
       }
-
+      
+      break;
     }
-    
-    break;
-  }
 
-  default:{
-    printf("You entered wrong value");
-    break;
-  }
-  
+    default:
+    {
+      printf("You entered wrong value");
+      break;
+    }
   }
   return 0;
+}
+
+void pipeCreate(int fd[]){
+  // create the pipe
+  if(pipe(fd)==-1)
+    printErrorMessage("Pipe failed");
+  else
+    printf("\nPipe Created!\n");
+}
+
+void printErrorMessage(char *errorMessage){
+  fprintf(stderr,"%s",errorMessage);
+  sleep(3);
+  exit(1);
 }
