@@ -1,0 +1,119 @@
+İnternet kullanım imkânlarının yaygınlaşmasıyla 
+beraber günümüzde insanlar vakitlerinin önemli bir 
+kısmını internet  üzerinde  yer alan  sosyal paylaşım 
+ortamlarında  harcamaktadırlar.  Özellikle  kişilerin 
+kendilerini  özgürce  ifade  edebildikleri  ve  bilgi 
+paylaşımında bulunabildikleri sosyal medya, forum, 
+blog  gibi  ortamlar  günlük  hayatımızda  büyük  bir 
+yer  edinmiştir.  Kullanıcıların  bu  ortamlar 
+vasıtasıyla  ruh  hallerini  belirtmeleri,  toplumu 
+etkileyen olaylar, spor müsabakaları ve filmler gibi 
+konularda  kendi  duygu  ve  düşüncelerini 
+paylaşmaları bu ortamları  toplumun  genel  kanısını 
+belirtebilecek  bir  araca  dönüştürmüştür.  Hatta 
+normal hayatlarında bazı nedenlerden dolayı gerçek 
+duygu  ve  düşüncelerini  paylaşamayan  kişilerin, 
+sosyal  medya  üzerinden  kendilerini  rahatça  ifade 
+edebilmeleri,  sosyal  medya  ve  diğer  ortamları 
+duygu  analizi  açısından  daha  gerçekçi  sonuçlar 
+verebilecek bir veri kaynağına dönüştürmüştür. 
+Duygu analizi (Sentiment Analysis) olarak ifade 
+edilen bilimsel çıkarım yöntemi, internet ortamının 
+global çerçevede toplumun birçok kesiminin günlük 
+hayatında  çok  önemli  ölçüde  yer  alması  ve  bunun 
+sonucunda bireylerin sosyal ve siyasi olaylar, ürün 
+ve  hizmet,  marka  vb.  olgular  hakkındaki 
+düşüncelerini  ifade  ettikleri  elektronik 
+platformlardaki  büyük  hacimli  verilerin  yazılım 
+sistemleri  ile  hızlı  olarak  raporlanması  ve  anlam 
+çıkartılması işlemidir.  
+Duygu analizi çalışmalarında metinlerin olumlu, 
+olumsuz ya da  tarafsız içeriğe sahip olup olmadığı 
+sorgulanır ve analiz edilir. Bu analiz sonucuna göre 
+bireylerin ya da  belirli  bir  grubun çalışmayla ilgili 
+konu  hakkındaki  tutumu  belirlenmiş  olur.  Bu 
+açıdan  duygu analizi işletmeler  açısından  piyasaya 
+yeni sürülecek bir ürün için ön pazar araştırması, bir 
+topluluk  için  alınacak  bir  kararın  olumlu  veya 
+olumsuz nasıl tepki alacağı, film izleyecek kişilerin 
+önceki yapılan yorumlara göre filmi izlemeye karar 
+vermesi  gibi  konularda  yönlendirme  yapabilir. 
+Ancak olumlu veya olumsuz görüşün elde edileceği 
+verilerin çok olması bu analizin tek tek inceleyerek 
+yapılmasını  zorlaştırmaktadır.  Bu  yüzden  duygu 
+analizi  metin  madenciliği  ile  makine  öğrenmesi 
+alanlarının önemli ve üzerine çalışılan konularından 
+biri haline gelmiştir. 
+Duygu analizi  yapılırken,    daha önceden  görüş 
+tarafı  belli  olan  (pozitif  /  negatif  /nötr)  metinsel 
+veriler kullanılarak bir eğitim veri seti oluşturulur. 
+Daha sonra bu veriler metin madenciliği yöntemleri 
+ile  çeşitli  ön  işlemlerden  geçirilip  temizlenerek 
+sınıflamaya  uygun  hale  getirilmektedir.  Bu  ön 
+işlemler  arasında  iletideki  simge  ve  noktalama 
+işaretlerinin temizlenmesi, metni kelimelere ayırma 
+ve  her  bir  kelimenin  köklerinin  bulunarak  terim 
+listelerinin  oluşturulması,  metin  içerisindeki  edat, 
+bağlaç  ve  zamirlerden  oluşan  durak  kelimelerin 
+kaldırılması,  terim  frekansları  ve  ters  doküman 
+frekansları  yardımıyla  vektör  uzay  modelinin 
+oluşturulması sayılabilir. Vector uzay modellerinde 
+binary,  terim  frekansı,  ters  döküman  frekansı,  n 
+gram  gibi  çeşitli  yöntemler  kullanılmaktadır. 
+Vektör uzay modeli  oluşturulan  bu  veriler, makine 
+öğrenmesinde sıklıkla kullanılan yapay sinir ağları, 
+destek  vektör  makinaları,  karar  ağaçları  gibi 
+sınıflama  algoritmaları  yardımıyla  eğitilmektedir. 
+Çeşitli  sınıflayıcılar  tarafından  eğitilen  modeller 
+yardımıyla  yeni  gelen  duygu  ve  görüşler 
+sınıflandırılmaktadır.  
+Genel olarak duygu ve düşünce analizi aşağıda 
+belirtilen  işlevleri  yerine  getirmek  amacıyla 
+kullanılmaktadır.  
+• Duygu  görüş  sınıflandırma:  Bir  doküman 
+veya  metinde  bir  olgu  hakkında  görüş  ifade 
+edilmesi  ve  görüş sahibinden  olguya  yönelik  olan 
+duygunun ölçülmesi fikrine dayanır. 
+• Öznellik  Sınıflandırma:  Genel  olarak  bir 
+cümlenin öznel olup olmadığını tespit etmek olarak 
+ifade  edilebilir.  Başarılı  bir  öznellik  sınıflandırma 
+daha  iyi  duygu  sınıflandırmayı  sağlar.  Bu  işlem 
+olumlu, olumsuz ve nötr cümleleri ayırmaktan daha 
+zor bir süreç olarak görülmektedir. 
+• Görüş  özetleme:  Dokümandan  ve 
+içeriğindeki duygudan ana konuyu çıkarmakla ilgili 
+kavramdır. 
+• Görüş  elde  edilmesi:  Yapılan  sorguyla, 
+görüş belirten dokümanların çıkartılmasıdır. Bu tür 
+sistemlerde, iki tür  puan hesaplaması yapılmalıdır; 
+bunlar  sorguya  karşılık  ilgililik  puanı  ve  sorgu 
+hakkında  görüş  puanı  olup  bu  ikisi  genellikle 
+dokümanların seviyesini belirlemekte kullanılır. 
+• Alaycılık  ve  ironi:  Alay  ve  ironi  içeren 
+ifadelerin  bulunmasına  yöneliktir.  Özellikle 
+araştırmacılar  içerisinde  alay  ve  ironinin  nasıl 
+tanımlanması  gerektiğine  dair  anlaşmazlıkların 
+bulunmasından dolayı, bu görev duygu analizindeki 
+en karmaşık alanlardandır. 
+• Diğerleri:  Tür  ve  yazar  tespiti,  türü  ve 
+metni  tekrardan  yazan  yazarı  bulmaya  yöneliktir. 
+Sahte/yanıltıcı (spam) mesaj tespiti, mesajı belli bir 
+kesimin, şirketin veya ürünün lehine ya da aleyhine 
+çarpıtan,  güvenilmeyen  içeriğe  sahip  görüş  ve 
+yorumları tespit etmeye çalışır [1]. 
+Duygu  analizinde  günümüze  kadar  yapılan 
+çalışmalar,  genellikle  İngilizce  metinler  üzerinde 
+pozitif  ve  negatif  olmak  üzere  iki  sınıfta  ele 
+alınmıştır.  Bazı  çalışmalarda  ise  düşüncenin  nötr 
+olma durumu da dikkate alınarak üç sınıf üzerinden 
+incelemeler gerçekleştirilmiştir. 
+Duygu  Analizi  alanı  ile  ilgili  literatür 
+incelendiğinde  ilk  çalışmanın  Pang,  Lee  ve 
+Vaithyanatham tarafından yapıldığı, veri seti olarak 
+Internet  Movie  Database  arşivindeki  film 
+yorumlarının  kullanıldığı  görülmektedir. 
+Çalışmalarında ilgili veri seti üzerinde unigram, bi-
+gram, Part Of Speech (POS) gibi öznitelik çıkarma 
+yöntemlerini  kullanarak  sınıflama  için  gerekli 
+vektör  uzay  (vector  space)  modellerini 
+oluşturmuşlardır. 
