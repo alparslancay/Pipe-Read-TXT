@@ -7,4 +7,4 @@
 
 👤 **[Alparslan ÇAY](https://github.com/alparslancay)**
 👤 **[Doğan KASAS](https://github.com/doankasas)**
-👤**[Kübra Nur AKKUŞ](https://github.com/kubrakkus)**
+👤 **[Kübra Nur AKKUŞ](https://github.com/kubrakkus)**
