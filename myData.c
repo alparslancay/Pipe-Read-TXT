@@ -10,12 +10,16 @@
 
 void pipeCreate();
 void printErrorMessage(char *errorMessage);
-
+/* 
+*argv[] has two cases, 
+one of C File Name who is full reads input file texts, and Txt File Name 
+another of C File Name who is reads input file texts, Txt File Name, '=' operator and Another C File Name who is reads by paging input file texts
+*/
 int main(int argc, char *argv[]) {
 
   FILE *fp;
   char dataFromTXT[9999];
-  fp = fopen("inputFile.txt","r"); // File opening in read-only mode
+  fp = fopen(argv[1],"r"); // File opening in read-only mode
   
   if(fp == NULL){//Control for file exits.
     printErrorMessage("File can not open");
@@ -27,14 +31,14 @@ int main(int argc, char *argv[]) {
   switch(argc)//argument count
   {
 
-    case 1:
-    { //If argument count 1
+    case 2:
+    { //If argument count 2
       printf("%s",dataFromTXT); //All texts printing.
       break;
     }
 
-    case 3:
-    { //If argument count 3
+    case 4:
+    { //If argument count 4
 
       int fd[2]; //Tunel defined.
       pid_t pid; //Process defining.
@@ -61,7 +65,9 @@ int main(int argc, char *argv[]) {
     
       else
       { 
-        char *args[]={argv[2],NULL}; 
+        char programDefinitionString[] = "./";
+        strncat(programDefinitionString, argv[3], sizeof(argv[3])); 
+        char *args[]={programDefinitionString,NULL}; 
         printf("Executing myMore.c ...\n");
         execv(args[0],args);
       }
