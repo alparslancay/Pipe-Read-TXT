@@ -39,7 +39,13 @@ int main(int argc, char *argv[]) {
 
     case 4:
     { //If argument count 4
-
+      
+      if(*argv[2] != '=')
+      {
+        printf("You entered wrong operator");
+        break;
+      }
+      
       int fd[2]; //Tunel defined.
       pid_t pid; //Process defining.
 
